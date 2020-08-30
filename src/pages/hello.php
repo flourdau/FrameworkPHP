@@ -1,0 +1,1 @@
+<h1>Hello <?= htmlspecialchars(ucfirst($name), ENT_QUOTES, 'UTF-8') ?>!</h1>
