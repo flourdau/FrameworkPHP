@@ -1,24 +1,21 @@
 <?php
+    require_once __DIR__ . '/../vendor/autoload.php';
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing;
-use Routing\Exception\ResourceNotFoundException;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\DependencyInjection\Reference;
+    use App\Framework;
+    use Symfony\Component\HttpKernel;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+    $container = include __DIR__ . '/../private/src/Framework/container.php';
+    $container->setParameter('routes', include __DIR__ . '/../private/src/Framework/routing.php');
+    $container->setParameter('debug', true);
+    $container->register('listener.response', HttpKernel\EventListener\ResponseListener::class)
+        ->setArguments(['%charset%']);
+    $container->setParameter('charset', 'UTF-8');
+    $container->register('listener.string_response', Framework\StringResponseListener::class);
+    $container->getDefinition('dispatcher')
+        ->addMethodCall('addSubscriber', [new Reference('listener.string_response')]);
 
-$request = Request::createFromGlobals();
-$routes = require_once __DIR__ . '/../src/routes.php';
-$context = new Routing\RequestContext();
-$matcher = new Routing\Matcher\UrlMatcher($routes, $context->fromRequest($request));
-
-try {
-    $request->attributes->add($matcher->match($request->getPathInfo()));
-    $response = call_user_func($request->attributes->get('_controller'), $request);
-} catch (ResourceNotFoundException $e) {
-    $response = new Response('Not Found', 404);
-} catch (Exception $exception) {
-    $response = new Response('An error occurred', 500);
-}
-
-$response->send();
+    $request = Request::createFromGlobals();
+    $response = $container->get('kernel')->handle($request);
+    $response->send();
