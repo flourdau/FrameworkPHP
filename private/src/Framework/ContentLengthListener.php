@@ -1,23 +1,23 @@
 <?php
-    namespace App\Framework;
+namespace App\Framework;
 
-    use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-    class ContentLengthListener implements EventSubscriberInterface {
+class ContentLengthListener implements EventSubscriberInterface
+{
+    public function onResponse(ResponseEvent $event)
+    {
 
-        public function onResponse(ResponseEvent $event) {
+        $response = $event->getResponse();
+        $headers = $response->headers;
 
-            $response = $event->getResponse();
-            $headers = $response->headers;
-
-            if (!$headers->has('Content-Length') && !$headers->has('Transfer-Encoding')) {
-                $headers->set('Content-Length', strlen($response->getContent()));
-            }
-        
+        if (!$headers->has('Content-Length') && !$headers->has('Transfer-Encoding')) {
+            $headers->set('Content-Length', strlen($response->getContent()));
         }
-
-        public static function getSubscribedEvents() {
-            return ['response' => ['onResponse', -255]];
-        }
-
     }
+
+    public static function getSubscribedEvents()
+    {
+        return ['response' => ['onResponse', -255]];
+    }
+}

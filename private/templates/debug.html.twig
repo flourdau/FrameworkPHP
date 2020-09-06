@@ -1,0 +1,75 @@
+{% extends 'layout.html.twig' %}
+{% block main %}
+        <main>
+            <div>
+                <ul>
+                    <li>INIT = {{debug.init}}</li>
+                    <li>__DIR__ = {{debug.dir}}</li>
+                    <li>__FILE__ = {{debug.file}}</li>
+                    <li>__NAMESPACE__ = {{debug.namespace}}</li>
+                    <li>__CLASS__ = {{debug.class}}</li>
+                    <li>__TRAIT__ = {{debug.trait}}</li>
+                    <li>__METHODE__ = {{debug.method}}</li>
+                    <li>__FUNCTION__ = {{debug.function_name}}</li>
+                    <li>__LINE__ = {{debug.line}}</li>
+                    <li>ENV =
+                        <ul>
+{% for key, value in debug.env %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>SESSION =
+                        <ul>
+{% for key, value in debug.session %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>POST =
+                        <ul>
+{% for key, value in debug.post %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>GET =
+                        <ul>
+{% for key, value in debug.get %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>FILES =
+                        <ul>
+{% for key, value in debug.files %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>INTMAX = {{debug.IntMax}}</li>
+                    <li>COOKIES =
+                        <ul>
+{% for key, value in debug.cookie %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>CLASSES =
+                        <ul>
+{% for key, value in debug.classes %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                    <li>SERVER =
+                        <ul>
+{% for key, value in debug.server %}
+                            <li>{{key}} = {{value}}</li>
+{% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </main>
+{% endblock %}

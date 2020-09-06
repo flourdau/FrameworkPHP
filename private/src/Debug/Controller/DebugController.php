@@ -1,20 +1,21 @@
 <?php
-namespace App\Home\Controller;
+namespace App\Debug\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use App\Home\Model\GetMarkdown;
+use App\Debug\Model\GetInfo;
+use App\LibPHP\Debug;
 
-class HomeController
+class DebugController
 {
     public function index(Request $request, $twig)
     {
-        $html = new GetMarkdown();
+        $tab = new Debug;
         extract($request->attributes->all(), EXTR_SKIP);
         return new Response($twig->render($_route . '.html.twig', [
-                'name'     =>  ucfirst($name),
                 'title'     =>  $app,
-                'markdown'  =>  $html->get()]));
+                'debug'  =>  $tab->getTab()
+                ]));
     }
 }

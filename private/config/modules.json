@@ -1,0 +1,13 @@
+{
+
+    "HOME_MODULE"               :   "True",
+    "DATABASE_MODULE"           :   "False",
+    "CLIENT_MODULE"              :   "True",
+    "AUTHENTIFICATION_MODULE"   :   "False",
+    "BLOG_MODULE"               :   "False",
+    "FORUM_MODULE"              :   "False",
+    "CHAT_MODULE"               :   "False",
+    "MARKET_MODULE"             :   "False",
+    "RAIDROSTER_MODULE"         :   "False"
+
+}

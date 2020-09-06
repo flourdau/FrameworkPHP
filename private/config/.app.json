@@ -1,0 +1,23 @@
+{
+
+    "SITE"          :   {
+        "APP_LANG_DEFAULT"  :   "Fr_FR",
+        "APP_TITLE"         :   "Fr@meW<i class=\"fa fa-cog fa-spin\"></i>rkPHP",
+        "APP_DESCRIPTION"   :   "Création d'un Framework PHP personnel avec les librairies Symfony",
+        "APP_LANG"          :   "Fr-FR",
+        "APP_CHARSET"       :   "UTF-8"
+    },
+
+    "ADMIN"         :   {
+        "APP_LASTNAME_ADM"  :   "LOURDAUX",
+        "APP_FIRSTNAME_ADM" :   "Florian",
+        "APP_MAIL_ADM"      :   "lourdaux.florian.pro@gmail.com"
+    },
+
+    "WEB_MASTER"    :   {
+        "APP_LASTNAME_WM"   :   "LOURDAUX",
+        "APP_FIRSTNAME_WM"  :   "Florian",
+        "APP_MAIL_WM"       :   "lourdaux.florian.pro@gmail.com"
+    }
+
+}

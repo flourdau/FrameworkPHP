@@ -1,3 +1,6 @@
+/public/design/fonts
+/public/adm/cdn
+/private/src/LibPHP
 /vendor
-/private/cache/
+/private/cache
 .phpunit.result.cache

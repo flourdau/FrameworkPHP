@@ -1,0 +1,34 @@
+/* DEFAULT PAGE : */
+html, body { height:100% }
+
+body {
+  color: white;
+  background-color:#343a40;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-evenly;
+  align-items:center
+}
+
+nav, header, body, footer {width:100%}
+
+main {
+  width:50%
+}
+
+main>div {
+  background-color:#28a745;
+  text-align:left;
+  height:300px;
+  overflow:auto
+}
+
+footer {
+  color:#28a745;
+  background-color:#46505a
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+}

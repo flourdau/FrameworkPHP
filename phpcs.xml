@@ -1,0 +1,15 @@
+<?xml version="1.0"  ?>
+<ruleset name="FrameworkPHP">
+
+    <description>Mes Régles Code Sniffer</description>
+
+    <arg name="colors"/>
+
+    <arg value="p"/>
+    
+    <file>private/src/</file>
+    <file>public/index.php</file>
+
+    <rule ref="PSR2"></rule>
+
+</ruleset>
