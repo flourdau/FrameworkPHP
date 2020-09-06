@@ -15,7 +15,7 @@ class StringResponseListener implements EventSubscriberInterface
             $event->setResponse(new Response($response));
         }
     }
-
+    
     public static function getSubscribedEvents()
     {
         return ['kernel.view' => 'onView'];
