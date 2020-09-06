@@ -1,6 +1,6 @@
 {
     "name": "senacra/framework-php",
-    "description": "Céation d'un framework PHP",
+    "description": "Création d'un Framework PHP personnel avec les librairies Symfony",
     "authors": [
         {
             "name": "Florian LOURDAUX",
@@ -18,10 +18,10 @@
         "symfony/dotenv": "^5.1",
         "symfony/dependency-injection": "^5.1",
         "twig/twig": "^3.0",
+        "twig/markdown-extra": "^3.0",
         "components/jquery": "^3.5",
         "twbs/bootstrap": "4.5.0",
         "vrana/adminer": "^4.7",
-        "twig/markdown-extra": "^3.0",
         "erusev/parsedown": "^1.7"
     },
     "require-dev": {

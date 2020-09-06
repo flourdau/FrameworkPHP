@@ -1,4 +1,4 @@
-git clone https://github.com/flourdau/fonts.git  public/design/fonts;
-git clone https://github.com/flourdau/CDN.git public/adm/cdn/;
-git clone https://github.com/flourdau/libPHP.git private/src/LibPHP/;
+git clone https://github.com/flourdau/fonts.git private/depotsGIT/fonts;
+git clone https://github.com/flourdau/CDN.git private/depotsGIT/cdn;
+git clone https://github.com/flourdau/libPHP.git private/depotsGIT/LibPHP;
 composer install;
