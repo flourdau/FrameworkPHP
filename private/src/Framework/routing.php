@@ -3,11 +3,11 @@ use Symfony\Component\Routing;
 use \Symfony\Component\HttpFoundation\RedirectResponse;
 
 // DELETE '/'
-$uri = $request->getRequestUri();
-if (!empty($uri) && $uri[-1] === '/' && strlen($uri) > 1) {
-    $response = new RedirectResponse(substr($uri, 0, -1), 301);
-    $response->send();
-}
+// $uri = $request->getRequestUri();
+// if (!empty($uri) && $uri[-1] === '/' && strlen($uri) > 1) {
+//     $response = new RedirectResponse(substr($uri, 0, -1), 301);
+//     $response->send();
+// }
 
 $routes = new Routing\RouteCollection();
 
