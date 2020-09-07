@@ -12,6 +12,6 @@ class ClientController
             new HttpFoundation\Response($twig->render($_route . '.html.twig', [
                 'title' => $app,
                 'ip' => $request->getClientIp(),
-                'user_agent'=> $request->headers->get('User-Agent'))));
+                'user_agent'=> $request->headers->get('User-Agent')])));
     }
 }

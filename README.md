@@ -2,7 +2,10 @@
     Author  : flourdau
     Created : 2K20-08-30
     Updated : 2K20-09-06
-    Prod    : [Demo](https://frameworkphp-demo.positive-link.net)
+
+
+[Demo](https://frameworkphp-demo.positive-link.net)
+
 
 #### PHP7.3 + Composer
     sh setup.php
