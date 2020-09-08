@@ -12,9 +12,7 @@ class HomeController
     {
         $html = new GetMarkdown();
         extract($request->attributes->all(), EXTR_SKIP);
-        if ($_route === 'home2') {
-            $_route = 'home';
-        }
+
         return new Response($twig->render($_route . '.html.twig', [
                 'name'     =>  ucfirst($name),
                 'title'     =>  $app,

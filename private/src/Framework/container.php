@@ -1,14 +1,13 @@
 <?php
-use App\Framework\Kernel;
-use App\Framework\Runtime;
 use Symfony\Component\DependencyInjection;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\EventDispatcher;
 use Symfony\Component\HttpFoundation;
 use Symfony\Component\HttpKernel;
 use Symfony\Component\Routing;
-
 use Twig\Extra\Markdown\MarkdownExtension;
+
+use App\Framework\Kernel;
 
 $containerBuilder = new DependencyInjection\ContainerBuilder();
 

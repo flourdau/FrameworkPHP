@@ -25,4 +25,6 @@ $container->getDefinition('dispatcher')
 $request->attributes->set("app", json_decode(file_get_contents(__DIR__ . "/../private/config/.app.json", "r"), true));
 $request->attributes->set("twig", $container->get('env_twig'));
 
+$container->get('kernel')->checkURI($request);
+
 $container->get('kernel')->terminate($request, $container->get('kernel')->handle($request)->send());
