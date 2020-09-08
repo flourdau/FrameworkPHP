@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -22,7 +22,24 @@
 {% block body %}
     <body class="text-center">
 {% block nav %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"></nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/client">Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/debug">Debug</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 {% endblock %}
 {% block header %}
         <header>

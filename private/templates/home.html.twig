@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block main %}
     <main>
-        <div class="markdown">
+        <div>
 {% apply markdown_to_html %}
             {{ markdown|raw }}
 {% endapply %}
