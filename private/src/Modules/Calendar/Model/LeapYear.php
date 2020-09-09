@@ -1,5 +1,5 @@
 <?php
-namespace App\Calendar\Model;
+namespace App\Modules\Calendar\Model;
 
 class LeapYear
 {

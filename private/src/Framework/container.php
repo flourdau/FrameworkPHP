@@ -15,12 +15,14 @@ $containerBuilder->register('debug', $_ENV['APP_DEBUG']);
 $containerBuilder->register('context', Routing\RequestContext::class);
 $containerBuilder->register('matcher', Routing\Matcher\UrlMatcher::class)
     ->setArguments(['%routes%', new Reference('context')]);
+$containerBuilder->register('checkURI', App\Framework\CheckURI::class);
     
 $containerBuilder->register('loader_twig', Twig\Loader\FilesystemLoader::class)
-    ->setArguments([__DIR__ . '/../../templates']);
+    ->setArguments([__DIR__ . '/../../Templates']);
 $containerBuilder->register('twig.extension', MarkdownExtension::class);
 $containerBuilder->register('twig.debug', Twig\Extension\DebugExtension::class);
 $containerBuilder->register('twig.runtime', App\Framework\Runtime::class);
+
 
 if (!$_ENV['APP_DEBUG']) {
     $containerBuilder->register('env_twig', Twig\Environment::class)
@@ -44,7 +46,7 @@ $containerBuilder->register('listener.router', HttpKernel\EventListener\RouterLi
 $containerBuilder->register('listener.response', HttpKernel\EventListener\ResponseListener::class)
     ->setArguments(['UTF-8']);
 $containerBuilder->register('listener.exception', HttpKernel\EventListener\ErrorListener::class)
-    ->setArguments(['App\Calendar\Controller\ErrorController::exception']);
+    ->setArguments(['App\Modules\Calendar\Controller\ErrorController::exception']);
 
 $containerBuilder->register('dispatcher', EventDispatcher\EventDispatcher::class)
     ->addMethodCall('addSubscriber', [new Reference('listener.router')])

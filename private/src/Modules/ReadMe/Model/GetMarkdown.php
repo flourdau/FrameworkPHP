@@ -1,5 +1,5 @@
 <?php
-namespace App\Home\Model;
+namespace App\Modules\ReadMe\Model;
 
 class GetMarkdown
 {
@@ -7,7 +7,7 @@ class GetMarkdown
 
     public function __construct()
     {
-        $this->html =  file_get_contents(__DIR__ . "/../../../../README.md", "r");
+        $this->html =  file_get_contents(__DIR__ . "/../../../../../README.md", "r");
     }
 
     public function get()

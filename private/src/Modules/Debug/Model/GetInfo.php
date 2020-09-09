@@ -1,11 +1,11 @@
 <?php
-namespace App\Debug\Model;
+namespace App\Modules\Debug\Model;
 
 use App\LibPHP\Debug;
 
 class GetInfo
 {
-    private $html = [];
+    public $html = [];
 
     public function __construct()
     {
@@ -15,6 +15,6 @@ class GetInfo
 
     public function get()
     {
-        return $this->html;
+        return $this->html->getTab();
     }
 }

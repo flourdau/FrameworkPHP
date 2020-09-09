@@ -1,7 +1,7 @@
 ### README.md :
     Author  : flourdau
     Created : 2K20-08-30
-    Updated : 2K20-09-08
+    Updated : 2K20-09-09
 
 
 * [Sources : ](https://github.com/flourdau/FrameworkPHP) (GitHub)
@@ -20,6 +20,15 @@
 * symfony/event-dispatcher
 * symfony/dependency-injection
 * symfony/dotenv
+* symfony/security-core
+* symfony/security-csrf
+* symfony/security-http
+* symfony/security-guard
+* symfony/polyfill-intl-normalizer
+* symfony/polyfill-intl-grapheme
+* symfony/string
+* symfony/property-info
+* symfony/property-access
 * twig/twig
 * twig/markdown-extra
 * erusev/parsedown

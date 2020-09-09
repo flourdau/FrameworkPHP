@@ -1,10 +1,10 @@
 <?php
-namespace App\Calendar\Controller;
+namespace App\Modules\Calendar\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use App\Calendar\Model\LeapYear;
+use App\Modules\Calendar\Model\LeapYear;
 
 class LeapYearController
 {
@@ -14,16 +14,16 @@ class LeapYearController
         $leapYear = new LeapYear();
 
         if ($leapYear->isLeapYear($year)) {
-            $response = new Response($twig->render($_route . '.html.twig', [
+            $response = new Response($twig->render("Views/" . $_route . '.html.twig', [
                 'year'  =>  $year,
                 'msg'   =>  'Yep, ' . $year . ' this is a leap year!']));
         // Cache verification :
-        // $response = new Response($twig->render($_route . '.html.twig', [
+        // $response = new Response($twig->render("Views/" . $_route . '.html.twig', [
         //     'year'  =>  $year,
         //     'msg'   =>  'Yep, ' . $year . 'this is a leap year!' . rand()
         //     ]));
         } else {
-            $response =  new Response($twig->render($_route . '.html.twig', [
+            $response =  new Response($twig->render("Views/" . $_route . '.html.twig', [
                 'year'  =>  $year,
                 'msg'   =>  'Nope, ' . $year . ' this is not a leap year.']));
         }

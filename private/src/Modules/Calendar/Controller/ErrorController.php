@@ -1,5 +1,5 @@
 <?php
-namespace App\Calendar\Controller;
+namespace App\Modules\Calendar\Controller;
 
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\Response;

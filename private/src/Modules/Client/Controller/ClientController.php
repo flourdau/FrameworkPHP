@@ -1,5 +1,5 @@
 <?php
-namespace App\Client\Controller;
+namespace App\Modules\Client\Controller;
 
 use Symfony\Component\HttpFoundation;
 
@@ -9,7 +9,7 @@ class ClientController
     {
         extract($request->attributes->all(), EXTR_SKIP);
         return (
-            new HttpFoundation\Response($twig->render($_route . '.html.twig', [
+            new HttpFoundation\Response($twig->render("Views/" . $_route . '.html.twig', [
                 'title' => $app,
                 'ip' => $request->getClientIp(),
                 'user_agent'=> $request->headers->get('User-Agent')])));
