@@ -18,7 +18,7 @@ $containerBuilder->register('matcher', Routing\Matcher\UrlMatcher::class)
 $containerBuilder->register('checkURI', App\Framework\CheckURI::class);
     
 $containerBuilder->register('loader_twig', Twig\Loader\FilesystemLoader::class)
-    ->setArguments([__DIR__ . '/../../templates']);
+    ->setArguments([__DIR__ . '/../../template']);
 $containerBuilder->register('twig.extension', MarkdownExtension::class);
 $containerBuilder->register('twig.debug', Twig\Extension\DebugExtension::class);
 $containerBuilder->register('twig.runtime', App\Framework\Runtime::class);
