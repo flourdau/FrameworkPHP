@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class CheckURI
 {
-    public function scan(string $uri) : ?RedirectResponse 
+    public function scan(string $uri) : ?RedirectResponse
     {
     // DELETE '/'
         if (!empty($uri) && $uri[-1] === '/' && strlen($uri) > 1) {
