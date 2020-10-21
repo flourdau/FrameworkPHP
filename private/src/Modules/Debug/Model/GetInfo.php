@@ -1,7 +1,7 @@
 <?php
 namespace App\Modules\Debug\Model;
 
-use App\LibPHP\Debug;
+use App\Lib\Debug;
 
 class GetInfo
 {
